@@ -1,4 +1,4 @@
-package Storm;
+package Topology;
 
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.configuration.Configuration;
@@ -10,9 +10,10 @@ public class Properties {
     private Configuration configuration;
 
     private Properties() {
+
         try {
             this.configuration = new PropertiesConfiguration(
-                    this.getClass().getResource("/kafka-storm.Properties")
+                    this.getClass().getResource("/conf/kafka-storm.properties")
             );
         } catch (Exception ex) {
             LOGGER.fatal("Could not load configuration", ex);
